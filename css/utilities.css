@@ -1,0 +1,411 @@
+:root{
+  --light-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --dark-gray: hsl(0, 0%, 48%);
+  --light-gray: hsl(0, 15%, 91%);
+  --light-gray1: hsl(0, 6%, 85%);
+  --black: hsl(0, 96%, 80%);
+  --white: #fff;
+
+  --display: none;
+  --display-pledge: none;
+  --display-sub: none;
+  --display-pledgebar: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: var(--light-gray);
+}
+
+ul{
+  list-style: none;
+}
+
+body{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 310vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.1em;
+  background: var(--light-gray);
+  z-index: 1;
+  transition: all 1.5s ease-in;
+}
+
+body::before{
+  display: var(--display);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 360vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.shadow1 body::before{
+  transition: all 1.5s ease-in;
+  display: block;
+}
+
+.current{
+  padding-bottom: 10px;
+  border: 2px solid transparent;
+  border-bottom: 1px solid var(--white);
+}
+
+.bg_white{
+  background: var(--white);
+  opacity: 0.9;
+}
+.bg_white1{
+  background: var(--white);
+  opacity: 1;
+}
+.bg_lightgreen{
+  background: var(--light-cyan);
+}
+.bg_darkgreen{
+  background: var(--dark-cyan);
+}
+.bg_dark{
+  background: var(--black);
+}
+
+.col_lightgreen{
+  color: var(--light-cyan);
+  font-weight: bolder;
+}
+
+p{
+  line-height: 1.4;
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.nav_space{
+  margin: 0 1em;
+}
+
+.flex_cover{
+  display: flex;
+  flex-direction: column;
+}
+
+.mg_content{
+  margin: 1em 0;
+  padding: 3em;
+}
+
+.pdintro_bt{
+  padding: 1em 0;
+}
+
+.pdpro_bt{
+  padding: 1.2em 0;
+}
+
+.pback_bt{
+  padding: 0.5em 0;
+}
+
+.pdcomplete_bt{
+  padding: 0.8em 0;
+}
+
+#bamboo_stand, #black_edition, #mahogany_special{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box_mini{
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 2em auto;
+  padding: 2em;
+  max-height: 40vh;
+  border: 1px solid var(--light-gray1);
+}
+
+.box_mini:before{
+  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2.2em 0;
+  height: 70%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#mahogany_special::before{
+  display: block;
+  z-index: 1;
+}
+
+.enter_pledge:before{
+  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* padding: 2.2em 0; */
+  height: 30%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#mahogany .enter_pledge:before{
+  display: block;
+  content: '';
+  position: absolute;
+  
+  z-index: 50;
+}
+
+
+.mini_title, .select_reward{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mini_title{
+  align-items: center;
+}
+
+.pdmin_bt{
+  padding: 0.6em 0;
+}
+
+.pdactive_bt{
+  padding: 1.3em 0;
+}
+
+.minibox_active{
+  margin: 2rem auto;
+  padding: 2em;
+  max-height: 40vh;
+  border: 1px solid var(--dark-gray);
+}
+
+.straight_line{
+  display: var(--display-pledge);
+  width: 114%;
+  height: 2px;
+  background: var(--light-gray);
+  transform: translateX(-6%);
+}
+
+.sw_radio{
+  font-size: 0.9em;
+  margin: 0 1.2em;
+}
+
+.number_left{
+  font-weight: bold;
+  margin: 0 1em;
+}
+
+
+
+.text_foryou{
+  padding: 1.1em 0;
+}
+
+.show_pledge{
+  position: relative;
+  padding: 1rem 1rem ;
+  width: 25%;
+  font-weight: bold;
+  color: var(--black);
+  border: 1px solid var(--dark-gray);
+  border-radius: 2em; 
+}
+
+.validate_pledge{
+  margin-left: 1em;
+  padding: 1.1rem 1.6rem;
+  color: var(--white);
+  width: 25%;
+  font-size: 0.75rem;
+  font-weight: bolder;
+  border-radius: 1.8rem;
+  border: none;
+}
+
+#mahogany .validate_pledge{
+  padding: 1.3rem 2.8rem;
+}
+
+/* input radio design */
+
+.play_radio{
+  position:relative;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--dark-gray);
+  background: var(--white);
+}
+
+.play_radio input[type="radio"]{
+  opacity: 0;
+  position: absolute;
+}
+
+.play_radio .toggle_radwrap{
+  display: none;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  background: var(--dark-cyan);
+  transition: all 400ms ease-in;
+}
+
+
+input[type="radio"]:checked + .toggle_radwrap{
+  display: inline-block;
+}
+
+/* active completed  [Got It!] Button*/
+
+.complete_btn{
+  margin-top: 1.4em;
+  padding: 1em 1.6em;
+  border-radius: 1.6em;
+}
+
+/* menu mobile design */
+
+.pd_mob{
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+}
+
+.navbar_mobile .logo_hamburger{
+  position: relative;
+  top: -1.8rem;
+  left: 1.4rem;
+  width: 50px;
+  height: 70px;
+}
+
+ #toggle_hamburger{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 26px;
+  height: 26px;
+  z-index: 25;
+  background: transparent;
+  opacity: 0.7;
+
+}
+
+.navbar_mobile .play_image{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 70px;
+  background: url('../images/icon-hamburger.svg') no-repeat center center/cover ;
+  background-size: 50%;
+  transition: all 600ms ease-out;
+}
+
+.menu_content{
+  position: relative;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-95%, -6%);
+  width: 80vw;
+  height: 32vh;
+  background: var(--white);
+  margin: 0 auto;
+  border-radius: 16px;
+  z-index: 3;
+}
+
+.menu_content ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.menu_content ul li:nth-child(2), .menu_content ul li:nth-child(3){
+  border-top: 1px solid var(--light-gray1);
+}
+
+.menu_content .btn_nav{
+  color: var(--black);
+}
+
+.logo_hamburger #toggle_hamburger:checked + .navbar_mobile .play_image{
+
+  background: url('../images/icon-close-menu.svg') no-repeat center center/cover ;
+}
+
+.logo_hamburger #toggle_hamburger:checked ~ .menu_content{
+  display: block;
+}
+
+/* error message javascript */
+
+.error_message{
+  content: '';
+  left: -1.7rem;
+  position: absolute;
+  background: lightcyan;
+  font-size: 14px;
+  font-weight: bold;
+  color: brown;
+  max-height: 50px;
+  width: 100px;
+  box-shadow: 4px 3px 5px rgb(180, 137, 137) ;
+}
+
+/* animation body box shadowed */
+
+@keyframes animBodyShadow {
+
+  0%{
+    transform: scale(0.35);
+    opacity: 0.3;
+  }
+ 
+  50%{
+    transform: scale(0.65);
+    opacity: 0.6;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+}
+
+
+

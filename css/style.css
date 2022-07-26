@@ -1,0 +1,1281 @@
+/* root */
+
+:root{
+  --light-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --dark-gray: hsl(0, 0%, 48%);
+  --light-gray: hsl(0, 15%, 91%);
+  --light-gray1: hsl(0, 6%, 85%);
+  --black: hsl(0, 96%, 80%);
+  --white: #fff;
+
+  --display-state: none;
+  --display-pledge: none;
+  --display-pledgebar: none;
+  --display-sub: none;
+}
+
+/* none displayed first */
+
+.navbar_mobile{
+  display: none;
+}
+
+.active_stateproject {
+  display: var(--display-state);
+}
+
+
+.subscription_completed{
+  display: var(--display-sub);
+}
+
+.enter_pledge{
+  display: var(--display-pledge);
+}
+
+
+/* header page */
+
+#home_page{
+  width: 100vw;
+  height: 60vh;
+}
+.showcase_home{
+  background: url(../images/image-hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position-x:100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.home_container{
+  max-width: 1200px;
+  margin: 3em 2em ;
+}
+.showcase_home .nav_bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.showcase_home .nav_bar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: 5em;
+}
+
+/* Mastercraft monitor page */
+
+/* mastercraft intro */
+
+#mastercraft{
+  width: 100vw;
+  height: 205vh;
+}
+.mastercraft_container{
+  position: relative;
+  top: -8em;
+  max-width: 60vw;
+  height: 200vh;
+  max-height: 205vh;
+  margin: 0 auto;
+}
+.mastercraft_intro .back_up{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2em;
+}
+
+.mastercraft_intro{
+  max-height: 44vh;
+}
+
+.mastercraft_intro .mastercraft_introcontent{
+  position: relative;
+  top:-4.4em;
+}
+
+
+.mastercraft_intro img{
+  position: relative;
+  top: 0;
+  left: 46%;
+  transform: translate(-50%,1%);
+  width: 50px;
+  height: 50px;
+}
+.mastercraft_intro h3, .mastercraft_intro p{
+  text-align: center;
+}
+
+/* toggle switch button */
+
+.toggle_book{
+  position: relative;
+  width: 160px;
+  height: 25px;
+}
+#bookmarks{
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.toggle_fulfilled{
+  position: relative;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 155px;
+  height: 50px;
+  border-radius: 24px;
+  background: var(--light-gray1);
+}
+.toggle_fulfilled p{
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  margin: 0 auto;
+  transform: translateX(-1.3em);
+  transition: all 300ms ease-in;
+
+}
+.toggle_fulfilled::before{
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: url('../images/icon-bookmark.svg') no-repeat center center/cover;
+  transform: translateX(110px);
+  transition: all 400ms ease-in;
+}
+
+#bookmarks:checked + .toggle_fulfilled p{
+  transform: translateX(1.3em);
+  color: var(--light-cyan);
+  font-weight: bold;
+}
+#bookmarks:checked ~ .toggle_fulfilled::before{
+  transform: translateX(0);
+
+}
+
+/* button back this project and button reward */
+
+.back_up .back_project{
+  padding: 0.8rem 0.9rem;
+  font-weight: bolder;
+  border-radius: 24px;
+}
+
+/* stats record */
+
+.stats_backers .grid_backers{
+  display: grid;
+  grid-template-areas: 'backed total days'
+                       'rangeback rangeback rangeback';
+  grid-gap: 2.4em;
+  padding: 1em 0 2em 0;
+}
+.backed_amount{
+  grid-area: backed;
+  border-right: 1px solid var(--dark-gray);
+}
+.total_backers{
+  grid-area: total;
+  border-right: 1px solid var(--dark-gray);
+}
+.days_left{
+  grid-area: days;
+}
+.range_back{
+  grid-area: rangeback;
+}
+
+#range_backers{
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 10px;
+  background: var(--light-gray);
+  border-radius: 1.2em;
+}
+
+#range_backers::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 10px;
+  background: var(--light-cyan);
+  border-radius: 1.2em;
+}
+#range_backers::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+
+
+/* about this project */
+
+.about_project .intro_project{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.select_reward p span{
+  font-size: 1.4em;
+  font-weight: bold;
+  padding-right: 0.4em;
+}
+
+/* button reward */
+
+.select_reward .reward{
+  padding: 0.6em 1em;
+  border-radius: 1.2em;
+}
+
+
+/* active default state project */
+
+.active_stateproject {
+  position: absolute;
+  top: 8%;
+  left: 25%;
+  max-width: 94vw;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 25;
+  transition: all 1.5s ease-out;
+}
+
+.active_container{
+  margin: 1em 2.5em;
+  max-height: 200vh ;
+}
+
+.flex_backpro .minibox_content .select_radio{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#no_reward .minibox_content .select_radio{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.minibox_content .select_radio > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+ .enter_pledge{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 0;
+  margin: 0 1em;
+  transition: var(--transition-pledge);
+}
+.flex_backpro .enter_pledge label.insert_pledge{
+  font-size: 0.9em;
+  color: var(--dark-gray);
+}
+
+.flex_backpro .enter_pledge label.insert_pledge + div{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vw ;
+  top: -2.4rem;
+  left: 28%;
+}
+
+.flex_backpro .enter_pledge label.insert_pledge + div .validate_pledge{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+
+
+
+/* icon close modal */
+
+.active_stateproject .icon_closeproject{
+  position: relative;
+  top: 0.5em;
+  left: 95%;
+  width: 30px;
+  height: 30px;
+}
+
+/* submition  state project completed */
+
+.subscription_completed {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  max-width: 94vw;
+  width: 42vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 25;
+  transition: all 2s ease-out;
+}
+
+.subscription_container{
+  margin: 2.1em;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center;
+  margin: 0 2.4em; 
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* <-- *** Media queries *** --> */
+
+@media (min-width:740px) and (max-width:960px) {
+
+  body::before{
+    height: 400vh;
+  }
+
+  .showcase_home .nav_bar ul{
+    display: flex;
+    margin-right: 1.2em;
+  }
+
+  .showcase_home .nav_bar ul .btn_nav{
+    font-size: 0.8em;
+  }
+
+  .mastercraft_intro .mastercraft_introcontent{
+    position: relative;
+    top:-3.7em;
+  }
+
+  .mastercraft_intro img{
+    width: 25px;
+    height: 25px;
+    transform: rotateX(7deg);
+  }
+  
+  .toggle_fulfilled p{
+    transform: translateX(-0.8em);
+  }
+
+  .pdintro_bt{
+    padding: 0.6em 0;
+  }
+
+  .back_up .back_project{
+    font-size: 1rem;
+  }
+
+  .stats_backers .grid_backers{
+    grid-gap: 1.8em;
+    padding: 1em 0 1em 0;
+  }
+
+  .stats_backers .grid_backers h2{
+    font-size: 1.4rem;
+  }
+  .stats_backers .grid_backers p{
+    font-size: 0.8rem;
+  }
+
+  .box_mini{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 2em auto;
+    padding: 1em;
+    max-height: 70vh;
+    border: 1px solid var(--light-gray1);
+  }
+
+  .active_stateproject {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 64vw;
+  }
+
+  .active_container{
+    margin: 1em 2.5em;
+    max-height: 260vh ;
+  }
+
+  .flex_backpro p{
+    font-size: 0.7rem;
+  }
+
+  .flex_backpro .enter_pledge{
+    position: relative;
+    left: -0.5em;
+    padding: 1.5em 0.5rem;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge{
+    position: relative;
+    top: -1rem;
+    font-size: 0.55rem;
+  }
+  #mahogany .enter_pledge label.insert_pledge{
+    position: relative;
+    top: -1rem;
+    font-size: 0.5rem;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div{
+    position: relative;
+    left: 7rem;
+    top: -2rem;
+    max-width: 100%;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div .show_pledge{
+    position: relative;
+    top: -0.1rem;
+    width: 70px;
+  }
+
+  #mahogany .enter_pledge label.insert_pledge + div .show_pledge{
+    position: relative;
+    top: -0.1rem;
+    width: 70px;
+  }
+
+  .show_pledge{
+    position: relative;
+    padding: 0.6rem 1rem ;
+    width: 25%;
+    font-size: 0.6em;
+  }
+
+  .validate_pledge{
+    position: relative;
+    top: -0.3em;
+    margin-left: 0.5em;
+    padding: 0.8rem 2rem;
+    font-size: 0.5rem;  
+  }
+
+  #mahogany .validate_pledge{
+    position: relative;
+    top: -0.3em;
+    margin-left: 0.5em;
+    padding: 0.8rem 2rem;
+    font-size: 0.5rem;  
+  }
+  #mahogany .show_pledge{
+    padding: 0.6rem 1rem ;
+  }
+
+  .minibox_active{
+    margin: 2rem auto;
+    padding: 2em;
+    max-height: 32vh;
+    border: 1px solid var(--dark-gray);
+  }
+
+  .sw_radio{
+    font-size: 0.9em;
+    margin: 0 0.5em;
+    
+  }
+
+  .minibox_active .sw_radio{
+   font-size: 0.55rem;
+  }
+
+
+  .play_radio{
+  position:relative;
+  top: -0.1em;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  }
+
+  .play_radio .toggle_radwrap{
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  }
+
+}
+
+@media (max-width:739px) {
+
+  p{
+    line-height: 1.3;
+    font-weight: lighter;
+    font-size: 0.65em;
+  }
+
+  h2{
+    font-size: 1.2em;
+  }
+
+  h3{
+    font-size: 0.94em;
+  }
+
+  h4{
+    font-size: 0.6em;
+  }
+
+  .showcase_home .nav_bar ul{
+    margin-right: 2.5em;
+  }
+
+  .mastercraft_container{
+    position: relative;
+    top: -8em;
+    max-width: 60vw;
+  }
+
+  .mastercraft_intro{
+    max-height: 65vh;
+    height: 37vh;
+  }
+
+  .mastercraft_intro .mastercraft_introcontent{
+    position: relative;
+    top:-2.8em;
+  }
+  .mastercraft_intro img{
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    transform: translate(-50%,1%) rotateX(7deg);
+  }
+
+  .mastercraft_intro .back_up{
+    padding-top: 0.4em;
+  }
+
+  .back_up .back_project{
+    position: relative;
+    left: 1rem;
+    padding: 0.5em 0.8em;
+    font-weight: bolder;
+    border-radius: 24px;
+    justify-content: center;
+  }
+
+  .back_up .back_project a{
+    position: relative;
+    top: -0.2rem;
+    font-size: 0.7rem;
+    text-align: center; 
+  }
+
+  .mg_content{
+    margin: 1em 0;
+    padding: 2em ;
+  }
+
+  .toggle_fulfilled{
+    margin-left: 1.6rem;
+    width: 122px;
+    height: 41px;
+    border-radius: 24px;
+  }
+
+  .toggle_fulfilled p{
+    font-size: 0.75rem;
+    transform: translateX(-0.6em);
+  }
+
+  .toggle_fulfilled::before{
+    width: 39px;
+    height: 39px;
+    transform: translateX(84px);
+  }
+
+  .stats_backers .grid_backers{
+    grid-gap: 2em;
+  }
+
+  .select_reward .reward{
+    position: relative;
+    top: -0.2rem;
+    left: 0;
+    font-size: 0.6em;
+    padding: 0.6em 1em;
+    border-radius: 1.2em;
+  }
+
+  .select_reward p span{
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-right: 0.4em;
+  }
+
+
+
+  .active_stateproject .icon_closeproject{
+    left: 92%;
+  }
+
+  .active_stateproject {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 64vw;
+  }
+
+  .active_container{
+    margin: 1em 2.5em;
+    max-height: 260vh ;
+  }
+
+  .flex_backpro p{
+    font-size: 0.7rem;
+  }
+
+  .flex_backpro .enter_pledge{
+    position: relative;
+    left: -1.2rem;
+    padding: 0.9em 0;
+    
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    top: -1.2rem;
+    left: 2.7rem;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge{
+    font-size: 0.6rem;
+  }
+
+  .minibox_active{
+    margin: 2rem auto;
+    padding: 2em;
+    max-height: 34vh;
+    border: 1px solid var(--dark-gray);
+  }
+
+  #mahogany .enter_pledge label.insert_pledge{
+    font-size: 0.5rem;
+  }
+
+  #mahogany .enter_pledge label.insert_pledge + div{
+    position: relative;
+    left: 70%;
+    transform: translate(-50%, 7%);
+    max-width: 100%;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div .show_pledge{
+    position: relative;
+    top: -0.1rem;
+    width: 70px;
+  }
+
+  .show_pledge{
+    position: relative;
+    padding: 0.8em 1em ;
+    width: 35%;
+    font-size: 0.6em;
+  }
+
+  .validate_pledge{
+    position: relative;
+    top: -0.3em;
+    margin-left: 0.5em;
+    padding: 1.5em 2em;
+    font-size: 0.5rem;  
+  }
+
+  #mahogany .validate_pledge{
+    padding: 1.5em 2.8em;
+  }
+
+  .sw_radio{
+    font-size: 0.9em;
+    margin: 0 0.5em;
+    
+  }
+
+  .minibox_active .sw_radio{
+   font-size: 0.55rem;
+  }
+
+
+  .play_radio{
+  position:relative;
+  top: -0.1em;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  }
+
+  .play_radio .toggle_radwrap{
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  }
+
+  .wrap_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .minibox_content .select_radio > div div *{
+    margin: 0 0.2rem;
+  }
+
+  .subscription_completed{
+    position: absolute;
+    top: 19%;
+    width: 57vw;
+  } 
+
+  .subscription_completed p{
+    font-size: 0.95em;
+  }
+
+  .error_message{
+    top: 1.15rem;
+    left: -1rem;
+  }
+  
+}
+
+@media (max-width: 600px){
+
+  p{
+    font-size: 1em;
+  }
+
+  h3{
+    font-size: 1.3em;
+  }
+  h4{
+    font-size: 0.45em;
+  }
+
+
+  .showcase_home{
+    background: url(../images/image-hero-mobile.jpg) no-repeat center center/cover;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .showcase_home .nav_bar{
+    display: none;
+  }
+
+  .navbar_mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 120vw;
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .logo_hamburger{
+    position: relative;
+    left: 0.4rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .mastercraft_container{
+    position: relative;
+    top: -8em;
+    max-width: 80vw;
+    height: 200vh;
+  }
+
+  .mg_content{
+    margin: 1em 0;
+    padding: 1em;
+  }
+
+  .mastercraft_intro{
+    max-height: 50vh;
+    height: 40vh;
+  }
+
+  .mastercraft_intro .mastercraft_introcontent{
+    position: relative;
+    top:-1.8em;
+  }
+
+  .mastercraft_intro h3{
+    padding:0 2em;
+  }
+
+  .stats_backers .grid_backers{
+    grid-gap: 2.4em;
+    padding: 2.5em 0 3.5em 0;
+  }
+
+  .active_stateproject {
+    position: absolute;
+    top: 8%;
+    left: 48%;
+    transform: translate(-50%, 0);
+    width: 80vw;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge{
+    position: relative;
+    top: 0.3rem;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div{
+    position: relative;
+    left: 72%;
+    transform: translate(-50%, 7%);
+    max-width: 100%;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div .show_pledge{
+    position: relative;
+    top: -0.1rem;
+    width: 70px;
+  }
+
+  #mahogany .enter_pledge label.insert_pledge + div{
+    position: relative;
+    left: 70%;
+    transform: translate(-50%, 7%);
+    max-width: 100%;
+  }
+
+  .error_message{
+    left: 1.5rem;
+  }
+
+
+}
+
+
+@media (max-width: 476px){
+  
+  p{
+    font-size: 0.75em;
+  }
+
+  h4{
+    font-size: 0.55em;
+    /* font-size: 0.45em; */
+  }
+
+  .logo_hamburger{
+    position: relative;
+    margin: 0 ;
+    left: 1.2rem;
+  }
+
+  .mastercraft_intro .mastercraft_introcontent{
+    position: relative;
+    top:-1.8em;
+  }
+
+  .mastercraft_intro{
+    max-height: 65vh;
+    height: 43vh;
+  }
+
+  .mastercraft_intro h3{
+    padding:0 0.5em;
+  }
+
+  .pdintro_bt{
+    padding: 1em 0 2em 0;
+  }
+  
+  .toggle_fulfilled{
+    position: relative;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    margin-left: 0;
+    background: var(--light-gray1);
+  }
+
+  .toggle_fulfilled p{
+    display: none;
+    
+  }
+
+  .back_up .back_project{
+    position: relative;
+    width: 200%;
+    top: 0.3rem;
+    left:0;
+    padding: 0.8rem 0;
+    font-weight: bolder;
+    justify-content: center;
+    border-radius: 24px;
+  }
+
+
+  .back_up .back_project a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+    max-width: 96%;
+    background: var(--light-cyan);
+    margin: 0 auto;
+  }
+
+  .toggle_fulfilled::before{
+    left: -4.8rem;
+    width: 54px;
+    height: 54px;
+  }
+
+  .stats_backers .grid_backers{
+    display: grid;
+    grid-template-areas: 'backed'
+                         'total'
+                         'days'
+                         'rangeback';
+    grid-gap: 1.4em;
+    padding: 1em 0 2em 0;
+    text-align: center;
+  }
+
+  .backed_amount{
+    grid-area: backed;
+    border-right: none;
+    border-bottom: 1px solid var(--dark-gray);
+    justify-self: center;
+  }
+
+  .total_backers{
+    grid-area: total;
+    border-right:none;
+    border-bottom: 1px solid var(--dark-gray);
+    justify-self: center;
+  }
+  .days_left{
+    grid-area: days;
+  }
+  .range_back{
+    grid-area: rangeback;
+  }
+
+  .mg_content{
+    margin: 1em 0;
+    padding: 1em ;
+  }
+
+  .pdpro_bt{
+    padding: 1em 0;
+  }
+
+  .active_stateproject {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90vw;
+  }
+
+  .about_project .intro_project h3{
+    font-size: 1rem;
+  }
+
+  .about_project .mini_title p{
+    font-size: 0.7em;
+  }
+
+  .minibox_active{
+    margin: 1rem auto ;
+    padding: 2em 1em;
+    max-height: 40vh;
+    border: 1px solid var(--dark-gray);
+  }
+
+ 
+  .minibox_content .select_radio .toggle_radwrap >p + p{
+    padding-left: 0.25rem;
+  }
+
+
+  .sw_radio{
+    font-size: 0.9em;
+    margin: 0.8em 0;
+  }
+
+  #no_reward .sw_radio, #bamboo .sw_radio{
+    margin: 0.1em 0.6em;
+  }
+
+ 
+
+
+
+  .flex_backpro .enter_pledge{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: var(--display-pledge);
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto; */
+    
+    
+  }
+
+  .enter_pledge .show_pledge{
+    position: relative;
+    left: 0;
+    width: 60%;
+    padding-right: 0.5rem;
+  }
+
+  .enter_pledge .validate_pledge{
+    position: relative;
+    top: -0.5rem;
+    left: 0;
+    max-width: 4.5rem;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge{
+    position: relative;
+    top: 50%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(-1.5rem);
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div{
+    position: relative;
+    top: 10%;
+    left: 43%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: translate(-50%, 0);
+    max-width: 100%;
+    margin: 1.35rem 0 0.8rem 0;
+  }
+
+  #mahogany .enter_pledge label.insert_pledge + div{
+    position: relative;
+    top: 10%;
+    left: 40%;
+    transform: translate(-50%, 0);
+    max-width: 65%;
+    margin: 1.35rem 0 0.8rem 0;
+  }
+
+
+  .enter_pledge .show_pledge{
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding-right: 0.5rem;
+  }
+
+  .enter_pledge .validate_pledge{
+    position: relative;
+    top: -0.1rem;
+    left: 0;
+    width: 120%;
+    padding: 0.65rem 0.4rem;
+  }
+
+  .subscription_completed{
+    position: absolute;
+    top: 15%;
+    width: 70vw;
+  } 
+
+  .subscription_completed p{
+    font-size: 0.84em;
+  }
+
+  .error_message{
+    top: 2.15rem;
+    left: -1rem;
+  }
+
+}
+
+@media (max-width:360px) {
+
+  h4{
+    font-size: 0.45em;
+  }
+
+  p{
+    font-size: 0.65em;
+  }
+
+  .active_stateproject .icon_closeproject{
+    left: 88%;
+  }
+
+  
+  .mastercraft_intro{
+    max-height: 65vh;
+    height: 42vh;
+  }
+
+  .toggle_fulfilled::before{
+    left: -4.8rem;
+    width: 49px;
+    height: 49px;
+  }
+
+  .box_mini{
+    padding: 1.6em;
+  }
+
+  .box_mini .mini_title p{
+    font-size: 0.5em;
+  }
+
+  .select_reward .reward{
+    font-size: 0.5em;
+  }
+
+  .minibox_active .sw_radio, .minibox_active p{
+    font-size: 0.4em;
+  }
+
+  .minibox_active .text_foryou{
+    padding: 1.1em 0;
+    font-size: 0.6em;
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge{
+    position: relative;
+    top: 50%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(-21px);
+  }
+
+  .flex_backpro .enter_pledge label.insert_pledge + div{
+    position: relative;
+    top: 10%;
+    left: 43%;
+    display: flex;
+    transform: translate(-92px, 0);
+    max-width: 100%;
+  }
+
+  #mahogany .enter_pledge label.insert_pledge + div{
+    position: relative;
+    top: 10%;
+    left: 43%;
+    transform: translate(-92px, 0);
+    max-width: 65%;
+  }
+
+ 
+  #mahogany .sw_radio{
+    max-width: 50px;
+    font-size: 0.2em;
+  }
+
+  .enter_pledge .show_pledge{
+    position: relative;
+    left: 0.2rem;
+    width: 60%;
+    padding-right: 0.5rem;
+  }
+
+  .enter_pledge .validate_pledge{
+    position: relative;
+    top: 0;
+    left: 0.4rem;
+    width: 60%;
+  }
+  
+}
+
+
+
+@media (max-width:326px) {
+
+  .active_container{
+    margin: 1em 1.4em;
+  }
+
+
+  .minibox_active{
+    margin: 0.2rem auto ;
+    padding: 2em 1em;
+    max-height: 40vh;
+    border: 1px solid var(--dark-gray);
+  }
+
+  .minibox_active .text_foryou{
+    padding: 1.1em 0;
+    font-size: 0.6em;
+  }
+
+  #mahogany .sw_radio, #mahogany p strong{
+    font-size: 0.3em;
+  }
+
+ 
+  
+}
