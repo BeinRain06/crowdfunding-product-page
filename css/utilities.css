@@ -135,7 +135,7 @@ p{
   left: 0;
   margin: 2em auto;
   padding: 2em;
-  max-height: 40vh;
+  max-height: 66vh;
   border: 1px solid var(--light-gray1);
 }
 
@@ -162,7 +162,6 @@ p{
   position: absolute;
   top: 0;
   left: 0;
-  /* padding: 2.2em 0; */
   height: 30%;
   width: 100%;
   background: rgba(255, 255, 255, 0.4);
@@ -198,7 +197,7 @@ p{
 .minibox_active{
   margin: 2rem auto;
   padding: 2em;
-  max-height: 40vh;
+  max-height: 70vh;
   border: 1px solid var(--dark-gray);
 }
 
@@ -318,8 +317,7 @@ input[type="radio"]:checked + .toggle_radwrap{
   height: 26px;
   z-index: 25;
   background: transparent;
-  opacity: 0.7;
-
+  opacity: 0;
 }
 
 .navbar_mobile .play_image{
@@ -330,7 +328,7 @@ input[type="radio"]:checked + .toggle_radwrap{
   height: 70px;
   background: url('../images/icon-hamburger.svg') no-repeat center center/cover ;
   background-size: 50%;
-  transition: all 600ms ease-out;
+  transition: all 400ms ease-out;
 }
 
 .menu_content{
@@ -344,7 +342,7 @@ input[type="radio"]:checked + .toggle_radwrap{
   background: var(--white);
   margin: 0 auto;
   border-radius: 16px;
-  z-index: 3;
+  z-index: 25;
 }
 
 .menu_content ul{
@@ -362,9 +360,10 @@ input[type="radio"]:checked + .toggle_radwrap{
   color: var(--black);
 }
 
-.logo_hamburger #toggle_hamburger:checked + .navbar_mobile .play_image{
+.logo_hamburger #toggle_hamburger:checked + .play_image{
 
   background: url('../images/icon-close-menu.svg') no-repeat center center/cover ;
+  background-size: 50%;
 }
 
 .logo_hamburger #toggle_hamburger:checked ~ .menu_content{
