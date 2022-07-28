@@ -910,7 +910,7 @@
   }
 
   body::before{
-    height: 414vh;
+    height: 410vh;
   }
 
   .logo_hamburger{
@@ -1332,13 +1332,13 @@
   }
 }
 
-@media (max-width: 600px) and (orientation: landscape){
+@media (max-width: 650px) and (orientation: landscape){
 
   body::before{
-    height: 560vh;
-  }
+    min-height: 700vh;
+    
 
-  
+  }
 
   .mastercraft_intro{
     max-height: 70vh;
